@@ -24,11 +24,7 @@ import org.apache.spark.deploy.SparkHadoopUtil
 object HDFSConfigHelper {
 
    def getHadoopConf(sparkConfOptional:Option[SparkConf]): Configuration = {
-    if (sparkConfOptional.isDefined) {
-      SparkHadoopUtil.get.newConfiguration(sparkConfOptional.get)
-    }else {
-      val sparkConf = new SparkConf()
-      SparkHadoopUtil.get.newConfiguration(sparkConf)
+      val hadoopConf = new Configuration()
+      hadoopConf
     }
   }
-}
